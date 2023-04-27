@@ -4,21 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>To Do List</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="main">
     <div class="container">
       <div class="inner">
         <div class="view_type-time">
-          <button>오늘</button>
-          <button>예정</button>
-          <button>보류</button>
+          <button type="button" class="btn active">오늘</button>
+          <button type="button" class="btn">예정</button>
+          <button type="button" class="btn">보류</button>
         </div>
         <div class="view_type-category">
-          <button>전체</button>
-          <button>카테고리A</button>
-          <button>카네고리B</button>
+          <div class="view_type-category_wrap">
+            <button type="button" class="btn">전체</button>
+            <button type="button" class="btn">카테고리A</button>
+            <button type="button" class="btn">카네고리B</button>
+            <button type="button" class="btn">카네고리C</button>
+            <button type="button" class="btn">카네고리D</button>
+            <button type="button" class="btn">카네고리E</button>
+            <button type="button" class="btn">카네고리F</button>
+            <button type="button" class="btn">카네고리G</button>
+            <button type="button" class="btn">카네고리H</button>
+            <button type="button" class="btn">카네고리I</button>
+          </div>
+        </div>
+        <div class="contents">
+          <div class="contents_wrap">
+            <div class="contents-list">
+              <div class="text">
+                Hello World
+              </div>
+              <div class="func">
+                <button type="button">버튼</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
