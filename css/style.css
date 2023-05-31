@@ -1,4 +1,4 @@
-* {margin: 0; left: 0;}
+* {margin: 0; padding: 0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
 body {
   min-height: 100vh;
   background: #f9f9fe;
@@ -24,9 +24,12 @@ table, tr, td {border-collapse: collapse;}
 
 .btn {border: 0; background: none;}
 
-#main {padding: 30px 0 100px;}
+#main {height: 100vh;}
+#main .container,
+#main .inner {position: relative; height: 100%;}
 
-.view_type-time {display: flex; justify-content: center; align-items: center; gap: 3px;}
+.main_contents {position: relative; height: 100%;}
+.view_type-time {display: flex; justify-content: center; align-items: center; gap: 3px; padding-top: 30px;}
 .view_type-time .btn {width: 60px; height: 30px; border-radius: 10px; background: #979797; color: #fff;}
 .view_type-time .btn.active {background: #ff5100;}
 
@@ -40,3 +43,15 @@ table, tr, td {border-collapse: collapse;}
 .contents-list {display: flex; justify-content: space-between; align-items: flex-start; overflow: hidden; padding: 10px; background: #fff; border-radius: 10px;}
 .contents-list .text {}
 .contents-list .func {}
+
+.memo_write-btn {position: absolute; bottom: 10%; right: 3%; z-index: 100; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #4e4ed7; font-size: 20px; font-weight: 600; color: #fff;}
+
+.memo_write_layout {opacity: 0; visibility: hidden; position: absolute; bottom: 0; left: 0; z-index: 200; width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+.memo_write_layout.on {opacity: 1; visibility: visible; transition: 0.3s;}
+.memo_write_layout_contents {overflow: hidden; position: absolute; bottom: 0; left: 0; z-index: 300; width: 100%; border-radius: 20px 20px 0 0; background: #282a30;}
+.memo_write_layout.on .memo_write_layout_contents {bottom: 0;}
+.memo_write_layout_contents-in {padding: 30px 10px;}
+.memo_write-text_wrap {position: relative;}
+.memo_write-input {width: 100%; height: 40px; padding: 0 45px 0 15px; border: 0; border-radius: 20px; background: #3d3e4a; font-size: 14px; font-weight: 400; color: #fff;}
+.memo_write-input::placeholder {color: #ccc;}
+.memo_save-btn {position: absolute; top: 7px; right: 7px; z-index: 10; width: 26px; height: 26px; border: 0; border-radius: 50%; background: #739df1; font-size: 20px; font-weight: 600; color: #fff;}
