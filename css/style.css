@@ -41,8 +41,11 @@ table, tr, td {border-collapse: collapse;}
 .contents_wrap {display: flex; flex-flow: column wrap; gap: 20px 0; padding: 20px;}
 
 .contents-list {display: flex; justify-content: space-between; align-items: flex-start; overflow: hidden; padding: 10px; background: #3d3e4a; border-radius: 10px;}
-.contents-list .text {margin-top: 4px; font-size: 14px; font-weight: 300; color: #fff;}
-.contents-list .func {}
+.contents-list .text {flex: 1 1 0; margin-top: 2px;}
+.contents-list .text .con {font-size: 14px; font-weight: 300; color: #fff;}
+.contents-list .text .date {margin-top: 5px; font-size: 12px; font-weight: 300; color: #999;}
+.contents-list .func {flex: 0 1 20px;}
+.memo_delete-btn {width: 20px; height: 20px; border: 0; border-radius: 50%; background: #f00; font-size: 10px; font-weight: 400; color: #fff;}
 
 .memo_write-btn {position: absolute; bottom: 10%; right: 3%; z-index: 100; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #4e4ed7; font-size: 20px; font-weight: 600; color: #fff;}
 

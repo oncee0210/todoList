@@ -5,6 +5,7 @@
 const momoWrap = document.querySelector(".contents_wrap"); // 메모 목록 박스
 const writeOpenBtn = document.querySelector(".memo_write-btn"); // 메모 쓰기 열기 버튼
 const writeCloseBtn = document.querySelector(".memo_close-btn"); // 메모 쓰기 닫기 버튼
+const writeDeleteBtn = document.querySelector(".memo_delete-btn"); // 메모 쓰기 닫기 버튼
 const writeBox = document.querySelector(".memo_write_layout"); // 메모 쓰기 박스
 const writeText = document.querySelector("input[name=memo_write-text]"); // 메모 내용 입력칸
 const writeSaveBtn = document.querySelector(".memo_save-btn"); // 메모 저장 버튼
@@ -16,7 +17,7 @@ const momoDataInit = () => {
     .then(response => response.json())
     .then(data => {
       data.map((memo) => {
-        memoRender(memo.text);
+        memoRender(memo);
       })
     })
     .catch(error => {
@@ -27,14 +28,15 @@ const momoDataInit = () => {
 momoDataInit();
 
 // # 메모 목록 렌더링
-const memoRender = (text) => {
+const memoRender = (data) => {
   let momoList = `
   <div class="contents-list">
     <div class="text">
-      ${text}
+      <p class="con">${data.text}</p>
+      <p class="date">${data.date}</p>
     </div>
     <div class="func">
-      <button type="button">버튼</button>
+      <button type="button" class="memo_delete-btn" onclick="deleteMemo(event)">X</button>
     </div>
   </div>
   `;
@@ -62,42 +64,7 @@ const closeWrite = () => {
 writeCloseBtn.addEventListener('click', closeWrite)
 
 // # 메모 저장
-// json 파일 쓰기
-const memoDataSave = (data) => {
-  fetch(memoJsonPath)
-    .then(response => response.json())
-    .then(existingData => {
-      // 기존 데이터에 새로운 데이터 추가
-      existingData.push(data);
-
-      // 데이터를 JSON 문자열로 변환
-      const jsonData = JSON.stringify(existingData);
-
-      // 업데이트된 데이터를 memolist.json 파일에 저장
-      fetch(memoJsonPath, {
-        method: 'POST',
-        body: jsonData,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => {
-          if (response.ok) {
-            console.log('데이터 저장 성공');
-          } else {
-            console.error('데이터 저장 실패');
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
-
-// event handler
+// event handler (입력한 데이터 전달 및 렌더링)
 const saveMemo = () => {
   let memoData = {
     "idx": 1,
@@ -105,10 +72,20 @@ const saveMemo = () => {
     "date": "2023-12-31"
   };
 
-  memoDataSave(memoData);
-  memoRender(memoData.text);
+  memoRender(memoData);
   closeWrite();
+}
+
+// 전달된 데이터 저장하기 (X)
+const memoDataSave = (data) => {
+
 }
 
 // event listener
 writeSaveBtn.addEventListener('click', saveMemo)
+
+// # 메모 삭제
+// event handler
+const deleteMemo = (event) => {
+  event.target.closest(".contents-list").remove();
+}
