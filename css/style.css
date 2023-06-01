@@ -20,7 +20,7 @@ table, tr, td {border-collapse: collapse;}
 
 
 .container {width: 720px; max-width: 100%; margin: 0 auto;}
-.inner {padding-left: 20px; padding-right: 20px;}
+.inner {}
 
 .btn {border: 0; background: none;}
 
@@ -28,30 +28,31 @@ table, tr, td {border-collapse: collapse;}
 #main .container,
 #main .inner {position: relative; height: 100%;}
 
-.main_contents {position: relative; height: 100%;}
+.main_contents {position: relative; height: 100%; padding: 0 3%; background: #14151c;}
 .view_type-time {display: flex; justify-content: center; align-items: center; gap: 3px; padding-top: 30px;}
 .view_type-time .btn {width: 60px; height: 30px; border-radius: 10px; background: #979797; color: #fff;}
 .view_type-time .btn.active {background: #ff5100;}
 
 .view_type-category {}
 .view_type-category_wrap {display: flex; justify-content: flex-start; align-items: center; overflow-x:auto; white-space:nowrap;}
-.view_type-category .btn {padding: 10px;}
+.view_type-category .btn {padding: 10px; font-size: 14px; font-weight: 300; color: #fff;}
 
-.contents {background: #f2f2ff; border-radius: 10px;}
-.contents_wrap {padding: 20px;}
+.contents {margin-top: 30px; height: calc(100vh - 170px); overflow-y: auto;}
+.contents_wrap {display: flex; flex-flow: column wrap; gap: 20px 0; padding: 20px;}
 
-.contents-list {display: flex; justify-content: space-between; align-items: flex-start; overflow: hidden; padding: 10px; background: #fff; border-radius: 10px;}
-.contents-list .text {}
+.contents-list {display: flex; justify-content: space-between; align-items: flex-start; overflow: hidden; padding: 10px; background: #3d3e4a; border-radius: 10px;}
+.contents-list .text {margin-top: 4px; font-size: 14px; font-weight: 300; color: #fff;}
 .contents-list .func {}
 
 .memo_write-btn {position: absolute; bottom: 10%; right: 3%; z-index: 100; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #4e4ed7; font-size: 20px; font-weight: 600; color: #fff;}
 
 .memo_write_layout {opacity: 0; visibility: hidden; position: absolute; bottom: 0; left: 0; z-index: 200; width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
 .memo_write_layout.on {opacity: 1; visibility: visible; transition: 0.3s;}
-.memo_write_layout_contents {overflow: hidden; position: absolute; bottom: 0; left: 0; z-index: 300; width: 100%; border-radius: 20px 20px 0 0; background: #282a30;}
+.memo_write_layout_contents {position: absolute; bottom: 0; left: 0; z-index: 300; width: 100%; border-radius: 20px 20px 0 0; background: #282a30;}
 .memo_write_layout.on .memo_write_layout_contents {bottom: 0;}
-.memo_write_layout_contents-in {padding: 30px 10px;}
+.memo_write_layout_contents-in {padding: 30px 20px;}
 .memo_write-text_wrap {position: relative;}
 .memo_write-input {width: 100%; height: 40px; padding: 0 45px 0 15px; border: 0; border-radius: 20px; background: #3d3e4a; font-size: 14px; font-weight: 400; color: #fff;}
 .memo_write-input::placeholder {color: #ccc;}
 .memo_save-btn {position: absolute; top: 7px; right: 7px; z-index: 10; width: 26px; height: 26px; border: 0; border-radius: 50%; background: #739df1; font-size: 20px; font-weight: 600; color: #fff;}
+.memo_close-btn {position: absolute; top: -35px; right: 6%; z-index: 20; width: 26px; height: 26px; border: 0; border-radius: 50%; background: #739df1; font-size: 16px; font-weight: 600; color: #fff;}

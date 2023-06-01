@@ -12,11 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
-  <script
-  src="https://code.jquery.com/jquery-3.7.0.js"
-  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-  crossorigin="anonymous"></script>
-  <script src="/js/normal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="/js/normal.js" defer></script>
 </head>
 <body>
   <div id="main">
@@ -45,14 +43,7 @@
           </div>
           <div class="contents">
             <div class="contents_wrap">
-              <div class="contents-list">
-                <div class="text">
-                  Hello World
-                </div>
-                <div class="func">
-                  <button type="button">버튼</button>
-                </div>
-              </div>
+              <!--메모 리스트...-->
             </div>
           </div>
 
@@ -61,6 +52,7 @@
 
         <div class="memo_write_layout">
           <div class="memo_write_layout_contents">
+            <button type="button" class="memo_close-btn">X</button>
             <div class="memo_write_layout_contents-in">
               <div class="memo_write-text_wrap">
                 <input type="text" name="memo_write-text" class="memo_write-input" placeholder="메모를 적어주세요.">
