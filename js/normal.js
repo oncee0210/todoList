@@ -75,7 +75,7 @@ const memoDataSave = (data) => {
 
       // 업데이트된 데이터를 memolist.json 파일에 저장
       fetch(memoJsonPath, {
-        method: 'PUT',
+        method: 'POST',
         body: jsonData,
         headers: {
           'Content-Type': 'application/json'
